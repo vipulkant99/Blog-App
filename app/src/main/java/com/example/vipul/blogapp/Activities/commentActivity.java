@@ -40,6 +40,7 @@ public class commentActivity extends AppCompatActivity {
     private List<comment> commentList = new ArrayList<>();
     private CommentRecyclerAdapter commentAdapter;
     private ProgressDialog pd;
+    private String postId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,8 @@ public class commentActivity extends AppCompatActivity {
         commentRecycler.setHasFixedSize(true);
         commentRecycler.setLayoutManager(new LinearLayoutManager(this));
         userId = getIntent().getExtras().getString("userId");
-        commentRefrence = FirebaseDatabase.getInstance().getReference().child("Comments").child(userId);
+        postId=getIntent().getExtras().getString("postId");
+        commentRefrence = FirebaseDatabase.getInstance().getReference().child("Comments").child(postId+"/"+userId);
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 

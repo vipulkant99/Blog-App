@@ -8,11 +8,12 @@ public class Blog {
     public String userid;
     public String userName;
     public String userMail;
+    public String postId;
 
     public Blog() {
     }
 
-    public Blog(String title1, String decription, String image1, String timestamp, String userid, String userName, String userMail) {
+    public Blog(String title1, String decription, String image1, String timestamp, String userid, String userName, String userMail, String postId) {
         this.title1 = title1;
         this.decription = decription;
         this.image1 = image1;
@@ -20,6 +21,15 @@ public class Blog {
         this.userid = userid;
         this.userName = userName;
         this.userMail = userMail;
+        this.postId = postId;
+    }
+
+    public String getPostId() {
+        return postId;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 
     public String getUserName() {

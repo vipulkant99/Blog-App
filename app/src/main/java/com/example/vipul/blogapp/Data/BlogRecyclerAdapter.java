@@ -95,6 +95,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
                     Blog item = blogList.get(pos);
                     Intent intent = new Intent(context, commentActivity.class);
                     intent.putExtra("userId",item.getUserid());
+                    intent.putExtra("postId",item.getPostId());
                     context.startActivity(intent);
                     break;
             }

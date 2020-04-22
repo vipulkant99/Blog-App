@@ -151,7 +151,7 @@ public class postListActivity extends AppCompatActivity {
                 blogList.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()){
                     Blog blog = ds.getValue(Blog.class);
-                    blogList.add(new Blog(blog.title1,blog.decription,blog.image1,blog.timestamp,blog.userid,blog.userName,blog.userMail));
+                    blogList.add(new Blog(blog.title1,blog.decription,blog.image1,blog.timestamp,blog.userid,blog.userName,blog.userMail,blog.postId));
                 }
 
                 blogRecyclerAdapter = new BlogRecyclerAdapter(postListActivity.this,blogList);
