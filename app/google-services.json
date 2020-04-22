@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:534154655953:android:12e079eff711c7d1",
+        "android_client_info": {
+          "package_name": "com.example.mini_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534154655953-j946gg6e37328qlllht8b0rt95b1v7f3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mini_project",
+            "certificate_hash": "a950be9c52cbe40937f1ed3892cfbaf22fdae97a"
+          }
+        },
+        {
+          "client_id": "534154655953-sfk79gh9804knam6qc2k3cmqooqofn94.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUaDfCZXoDAWglVFMhQCumfAlGWpDFLNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534154655953-sfk79gh9804knam6qc2k3cmqooqofn94.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:534154655953:android:03731b3ec8f29d49",
         "android_client_info": {
           "package_name": "com.example.vipul.blogapp"
@@ -33,20 +70,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "534154655953-sfk79gh9804knam6qc2k3cmqooqofn94.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

@@ -3,8 +3,8 @@
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -92,20 +92,29 @@ import java.util.Map;
                 filepath.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                       String downloadUrl=taskSnapshot.getDownloadUrl().toString();
+                        filepath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                String downloadUrl= uri.toString();
+                                DatabaseReference newpost = postDatabase.push();
+                                Map<String, String> datatosave =new HashMap<>();
+                                datatosave.put("title1",titleVal);
+                                datatosave.put("decription",descVal);
+                                datatosave.put("image1",downloadUrl.toString());
+                                datatosave.put("timestamp",String.valueOf(java.lang.System.currentTimeMillis()));
+                                datatosave.put("userid",user.getUid());
+                                datatosave.put("userName",user.getDisplayName());
+                                datatosave.put("userMail",user.getEmail());
+                                newpost.setValue(datatosave);
+                            }
+                        });
+
                        //Uri downloadurl = taskSnapshot.getDownloadUrl();
                         //String downloadUrl=taskSnapshot.getStorage().getDownloadUrl();
 
 
 
-                        DatabaseReference newpost = postDatabase.push();
-                        Map<String, String> datatosave =new HashMap<>();
-                        datatosave.put("title1",titleVal);
-                        datatosave.put("decription",descVal);
-                        datatosave.put("image1",downloadUrl.toString());
-                        datatosave.put("timestamp",String.valueOf(java.lang.System.currentTimeMillis()));
-                        datatosave.put("userid",user.getUid());
-                        newpost.setValue(datatosave);
+
                         progress.dismiss();
                         startActivity(new Intent(AddPostActivity.this,postListActivity.class));
                         finish();

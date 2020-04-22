@@ -6,16 +6,36 @@ public class Blog {
     public String image1;
     public String timestamp;
     public String userid;
+    public String userName;
+    public String userMail;
 
     public Blog() {
     }
 
-    public Blog(String title1, String decription, String image1, String timestamp, String userid) {
+    public Blog(String title1, String decription, String image1, String timestamp, String userid, String userName, String userMail) {
         this.title1 = title1;
         this.decription = decription;
         this.image1 = image1;
         this.timestamp = timestamp;
         this.userid = userid;
+        this.userName = userName;
+        this.userMail = userMail;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserMail() {
+        return userMail;
+    }
+
+    public void setUserMail(String userMail) {
+        this.userMail = userMail;
     }
 
     public String getTitle1() {
