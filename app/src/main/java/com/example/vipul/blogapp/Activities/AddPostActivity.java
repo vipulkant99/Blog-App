@@ -85,6 +85,7 @@ import java.util.Map;
        private void startPosting() {
            progress.setMessage("Posting.....");
            progress.show();
+           final String postId=postDatabase.push().getKey();
            final String titleVal = postTitle.getText().toString().trim();
            final String descVal = postDesc.getText().toString().trim();
            if (!TextUtils.isEmpty(titleVal) && !TextUtils.isEmpty(descVal)) {
@@ -105,6 +106,7 @@ import java.util.Map;
                                 datatosave.put("userid",user.getUid());
                                 datatosave.put("userName",user.getDisplayName());
                                 datatosave.put("userMail",user.getEmail());
+                                datatosave.put("postId",postId);
                                 newpost.setValue(datatosave);
                             }
                         });
